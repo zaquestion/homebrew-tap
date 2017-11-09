@@ -1,24 +1,12 @@
 class Lab < Formula
   desc "CLI tool for GitLab, like hub"
   homepage "https://github.com/zaquestion/lab"
-  url "https://github.com/zaquestion/lab.git",
-      :tag => "v0.5.0",
-      :revision => "5d3f274fbf89dfe8a4de3a26eb19a8a639df2f93"
-
-  head "https://github.com/zaquestion/lab.git"
-
-  depends_on "go" => :build
-  depends_on "dep" => :build
+  url "https://github.com/zaquestion/lab/releases/download/v0.5.1/lab_0.5.1_darwin_amd64.tar.gz"
+  version "0.5.1"
+  sha256 "522e017b32b07e6c53bd43c68464d6a0015bc71dd7baa4cc445c30c19046a88a"
 
   def install
-    ENV["GOPATH"] = buildpath
-    path = buildpath/"src/github.com/zaquestion/lab"
-    path.install buildpath.children
-    cd path do
-      system "dep", "ensure"
-      system "go", "build", "-o", bin/"lab"
-      prefix.install_metafiles
-    end
+    bin.install "lab"
   end
 
   test do
