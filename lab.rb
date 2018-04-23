@@ -1,9 +1,9 @@
 class Lab < Formula
   desc "CLI tool for GitLab, like hub"
   homepage "https://github.com/zaquestion/lab"
-  url "https://github.com/zaquestion/lab/releases/download/v0.10.1/lab_0.10.1_darwin_amd64.tar.gz"
-  version "0.10.1"
-  sha256 "7a215ca4b039403fd127edc02f6b9fdf58a044a3c925bd4d0e1666d8dfef977c"
+  url "https://github.com/zaquestion/lab/releases/download/v0.11.0/lab_0.11.0_darwin_amd64.tar.gz"
+  version "0.11.0"
+  sha256 "032a56621a9f273d886eb19faf4d825cbd6bbd5cb454591ffe823688e89ee63b"
 
   def install
     bin.install "lab"
