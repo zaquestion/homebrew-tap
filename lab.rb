@@ -1,9 +1,9 @@
 class Lab < Formula
   desc "Lab wraps Git or Hub, making it simple to clone, fork, and interact with repositories on GitLab"
   homepage "https://github.com/zaquestion/lab"
-  url "https://github.com/zaquestion/lab/releases/download/v0.13.0/lab_0.13.0_darwin_amd64.tar.gz"
-  version "0.13.0"
-  sha256 "ad2729e08e1ee07ab6a5f5cb6d1c08d844570f63fff0a8f3cf12b4c0c09356de"
+  url "https://github.com/zaquestion/lab/releases/download/v0.13.1/lab_0.13.1_darwin_amd64.tar.gz"
+  version "0.13.1"
+  sha256 "2b98fefa22eb27f3e2032e454a51e5e6ab2bc7736f67db66d8c8806244e48554"
 
   def install
     bin.install "lab"
