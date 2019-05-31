@@ -2,9 +2,9 @@
 class Lab < Formula
   desc "Lab wraps Git or Hub, making it simple to clone, fork, and interact with repositories on GitLab"
   homepage "https://github.com/zaquestion/lab"
-  url "https://github.com/zaquestion/lab/releases/download/v0.15.3/lab_0.15.3_darwin_amd64.tar.gz"
-  version "0.15.3"
-  sha256 "592227bb418a41ce94183e7550f105cd2e34586686fd97832b8d965c986979e6"
+  url "https://github.com/zaquestion/lab/releases/download/v0.16.0/lab_0.16.0_darwin_amd64.tar.gz"
+  version "0.16.0"
+  sha256 "bba7ca506343080de75c673aa8333cb97308a7b8e9e17547eb5325980c25c54a"
 
   def install
     bin.install "lab"
@@ -15,8 +15,7 @@ class Lab < Formula
     %w[haunted house].each { |f| touch testpath/f }
     system "git", "add", "haunted", "house"
     system "git", "commit", "-a", "-m", "Initial Commit"
-
-	lab_env_config = "LAB_CORE_HOST=foo LAB_CORE_USER=bar LAB_CORE_TOKEN=baz"
+    lab_env_config = "LAB_CORE_HOST=foo LAB_CORE_USER=bar LAB_CORE_TOKEN=baz"
     assert_equal "haunted\nhouse", shell_output("#{lab_env_config} #{bin}/lab ls-files").strip
   end
 end
