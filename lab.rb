@@ -2,16 +2,16 @@
 class Lab < Formula
   desc "Lab wraps Git or Hub, making it simple to clone, fork, and interact with repositories on GitLab"
   homepage "https://github.com/zaquestion/lab"
-  version "0.17.1"
+  version "0.17.2"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/zaquestion/lab/releases/download/v0.17.1/lab_0.17.1_darwin_amd64.tar.gz"
-    sha256 "bf9b0d3b89c81b8a3964742f578bfcbd7414a7df949c3b51a59570cb8e0f9d70"
+    url "https://github.com/zaquestion/lab/releases/download/v0.17.2/lab_0.17.2_darwin_amd64.tar.gz"
+    sha256 "78bed1ec798191bf78478d1e8e2dad259559fa519fd9f9f3e4c1329fb8d1ddff"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/zaquestion/lab/releases/download/v0.17.1/lab_0.17.1_linux_amd64.tar.gz"
-      sha256 "19b19a3ce166aff100f7bcea06fc0ae61be5ed8854152fdb254779c2dacf5160"
+      url "https://github.com/zaquestion/lab/releases/download/v0.17.2/lab_0.17.2_linux_amd64.tar.gz"
+      sha256 "abba37f6808daba347650b44249ef4793c849cc90a6b020a51e71dcfa3d34b99"
     end
   end
 
