@@ -17,6 +17,14 @@ class Lab < Formula
 
   def install
     bin.install "lab"
+
+    # Install bash completion
+    output = Utils.safe_popen_read("#{bin}/lab", "completion", "bash")
+    (bash_completion/"lab").write output
+
+    # Install zsh completion
+    output = Utils.safe_popen_read("#{bin}/lab", "completion", "zsh")
+    (zsh_completion/"_lab").write output
   end
 
   test do
