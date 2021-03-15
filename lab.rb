@@ -5,24 +5,24 @@
 class Lab < Formula
   desc "Lab wraps Git or Hub, making it simple to clone, fork, and interact with repositories on GitLab"
   homepage "https://github.com/zaquestion/lab"
-  version "0.20.0"
+  version "0.21.0"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/zaquestion/lab/releases/download/v0.20.0/lab_0.20.0_darwin_amd64.tar.gz"
-    sha256 "6580c00fbd26d0368d2e2ca77b556795cf355ccc3fdb9e2c15af012aa5f15a90"
+    url "https://github.com/zaquestion/lab/releases/download/v0.21.0/lab_0.21.0_darwin_amd64.tar.gz"
+    sha256 "32e5d4f527a85bb67f0a7b6936d33f6d036fd7d1d065198a1040bb87659bbbf2"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/zaquestion/lab/releases/download/v0.20.0/lab_0.20.0_linux_amd64.tar.gz"
-    sha256 "998340ffac7bd7f11638fa5b4bfd28e6e8bd896ba406d27d9028188a1985ac0f"
+    url "https://github.com/zaquestion/lab/releases/download/v0.21.0/lab_0.21.0_linux_amd64.tar.gz"
+    sha256 "ffcd17b87405d5f8a27529652c6b0238e6c014b9b30fb8026bb21e85d44ceadf"
   end
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/zaquestion/lab/releases/download/v0.20.0/lab_0.20.0_linux_armv6.tar.gz"
-    sha256 "f567c3c24e6c44215fc13d5dde8996d856019e4fa486277d08d48df860deaaf6"
+    url "https://github.com/zaquestion/lab/releases/download/v0.21.0/lab_0.21.0_linux_armv6.tar.gz"
+    sha256 "19264c7d38078b7fe50a4ad0c634f5165cd739c28b0a48d81b395dafbc910b13"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/zaquestion/lab/releases/download/v0.20.0/lab_0.20.0_linux_arm64.tar.gz"
-    sha256 "721f8eb2825e18b472e82e3a95a9ed077026786a81322c012a708d3401514b7b"
+    url "https://github.com/zaquestion/lab/releases/download/v0.21.0/lab_0.21.0_linux_arm64.tar.gz"
+    sha256 "e32e1e023850046523986d733ccb150b0243c866a048fadb10e7a138729a5253"
   end
 
   def install
