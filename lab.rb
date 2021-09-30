@@ -5,24 +5,29 @@
 class Lab < Formula
   desc "Lab wraps Git or Hub, making it simple to clone, fork, and interact with repositories on GitLab"
   homepage "https://github.com/zaquestion/lab"
-  version "0.22.0"
+  version "0.23.0"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/zaquestion/lab/releases/download/v0.22.0/lab_0.22.0_darwin_amd64.tar.gz"
-    sha256 "d7f9205a3ae2f3e2812c2efef022c1fe414be326ca6bf695cbf6651534ea4b0a"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/zaquestion/lab/releases/download/v0.23.0/lab_0.23.0_darwin_amd64.tar.gz"
+      sha256 "e63efe0936500858cdf574607f6e70389218b35a507f2eac0db166bccc98043d"
+    end
   end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/zaquestion/lab/releases/download/v0.22.0/lab_0.22.0_linux_amd64.tar.gz"
-    sha256 "5e48575204c12143f68d6754e46110d9b9cd960adc78edafc491b4ba3c6f5bf0"
-  end
-  if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/zaquestion/lab/releases/download/v0.22.0/lab_0.22.0_linux_armv6.tar.gz"
-    sha256 "f1f9b14250518afc25e19e940ecc2c4f5c4e230cbc53f696eadbcbfd2418cc4a"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/zaquestion/lab/releases/download/v0.22.0/lab_0.22.0_linux_arm64.tar.gz"
-    sha256 "d6b915a6ea805cd2361bac779b67f5889109f7ba7edad632781410f5673608ae"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/zaquestion/lab/releases/download/v0.23.0/lab_0.23.0_linux_amd64.tar.gz"
+      sha256 "24cdeca01dbcda2b699313f5bd65d169bccd1ba061ed4fa915d3ca3dd446ffd7"
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/zaquestion/lab/releases/download/v0.23.0/lab_0.23.0_linux_armv6.tar.gz"
+      sha256 "8ae2e117a52b9d27e2e359cde50e33065f1860bd0a8e53d2092b44777fbe61f3"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/zaquestion/lab/releases/download/v0.23.0/lab_0.23.0_linux_arm64.tar.gz"
+      sha256 "4f6628c59b1aa3bd5b970e327b383fe406e1e49fff02be0217c1157405c07c09"
+    end
   end
 
   def install
