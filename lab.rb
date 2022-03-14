@@ -5,33 +5,52 @@
 class Lab < Formula
   desc "Lab wraps Git or Hub, making it simple to clone, fork, and interact with repositories on GitLab"
   homepage "https://github.com/zaquestion/lab"
-  version "0.23.0"
-  bottle :unneeded
+  version "0.24.0"
 
   on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/zaquestion/lab/releases/download/v0.24.0/lab_0.24.0_darwin_arm64.tar.gz"
+      sha256 "3ce8baaff9ee99c17e1a2dc14bdc4b856ac1acbb856f2794278c42eac35d1ef6"
+
+      def install
+        bin.install "lab"
+      end
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/zaquestion/lab/releases/download/v0.23.0/lab_0.23.0_darwin_amd64.tar.gz"
-      sha256 "e63efe0936500858cdf574607f6e70389218b35a507f2eac0db166bccc98043d"
+      url "https://github.com/zaquestion/lab/releases/download/v0.24.0/lab_0.24.0_darwin_amd64.tar.gz"
+      sha256 "c317b7588b9c58726bdba6c8185ceb0152f16fdb16fcceeded8b29a80112cbcc"
+
+      def install
+        bin.install "lab"
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/zaquestion/lab/releases/download/v0.23.0/lab_0.23.0_linux_amd64.tar.gz"
-      sha256 "24cdeca01dbcda2b699313f5bd65d169bccd1ba061ed4fa915d3ca3dd446ffd7"
-    end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/zaquestion/lab/releases/download/v0.23.0/lab_0.23.0_linux_armv6.tar.gz"
-      sha256 "8ae2e117a52b9d27e2e359cde50e33065f1860bd0a8e53d2092b44777fbe61f3"
+      url "https://github.com/zaquestion/lab/releases/download/v0.24.0/lab_0.24.0_linux_armv6.tar.gz"
+      sha256 "13df8a1a29bc6c7fa232a1c34c59890874815dc76b732483366d04016e08f5ae"
+
+      def install
+        bin.install "lab"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/zaquestion/lab/releases/download/v0.24.0/lab_0.24.0_linux_amd64.tar.gz"
+      sha256 "8d5baa6bc309df42d76147021e811e0a17f5134865f9d969796d074b5464adda"
+
+      def install
+        bin.install "lab"
+      end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/zaquestion/lab/releases/download/v0.23.0/lab_0.23.0_linux_arm64.tar.gz"
-      sha256 "4f6628c59b1aa3bd5b970e327b383fe406e1e49fff02be0217c1157405c07c09"
-    end
-  end
+      url "https://github.com/zaquestion/lab/releases/download/v0.24.0/lab_0.24.0_linux_arm64.tar.gz"
+      sha256 "340c1b9bdbf39ee5e0e136a7ae2a23b4d209da44c8bcf780461f6250da9949dc"
 
-  def install
-    bin.install "lab"
+      def install
+        bin.install "lab"
+      end
+    end
   end
 
   test do
